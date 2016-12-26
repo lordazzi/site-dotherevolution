@@ -1,0 +1,28 @@
+<!-- <div class="forum">
+		<h2>Importante</h2>
+		<h3>Você não pode criar tópicos nessa área, essa área terá link dos tópicos mais discutidos.</h3>
+		<ul>
+		</ul>
+	</div> -->
+{loop="forums"}
+	<div class="forum floating black-marinho">
+		<h2>{$value.txtforum}</h2>
+		<h3>{$value.txtdescricao}</h3>
+		<ul>
+			{loop="$value.topicos"}
+				<li>
+					<article class="topico" data-idtopico="{$value.idtopico}">
+						<div class="title">
+							{$value.txttopico}
+						</div>
+						
+						<div class="autor">
+							criado por {$value.txtapelido}<br />
+							{function="date('d/m/Y H:i', $value.dtcadastro)"}
+						</div>
+					</article>
+				</li>
+			{/loop}
+		</ul>
+	</div>
+{/loop}

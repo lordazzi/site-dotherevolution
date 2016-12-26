@@ -1,0 +1,177 @@
+.gradient(@color1, @color2) {
+	background: @color1; /* Old browsers */
+	background: -moz-linear-gradient(top,  @color1 0%, @color2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, @color1 0%, @color2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, @color1 0%, @color2 100%); /* IE10+ */
+	background: linear-gradient(to bottom, @color1 0%, @color2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color1', endColorstr='@color2',GradientType=0 ); /* IE6-9 */
+}
+
+.border-radius(@params) {
+	-moz-border-radius: @params;
+	-webkit-border-radius: @params;
+	border-radius: @params;
+}
+
+#slider {
+	width: 640px;
+	height: 465px;
+	position: relative;
+	
+	.slide {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		
+		img {
+			margin: 0 auto;
+			display: block;
+		}
+		
+		.description {
+			.border-radius(5px);
+			display: inline-block;
+			color: #FFF;
+			position: absolute;
+			padding: 5px 10px;
+			cursor: default;
+			background-color: #000;
+		}
+	}
+	
+	.controller {
+		position: absolute;
+		width: 100%;
+		left: 0px;
+		top: -20px;
+		z-index: 10;
+		margin-left: 10px;
+		
+		.slide-control {
+			background-image: url("/resource/img/slide-inactive.png");
+			width: 27px;
+			height: 27px;
+			padding: 6px 0 0 9px;
+			color: #FFF;
+			margin: 2px;
+			cursor: pointer;
+			font-family: "Eurostile", sans-serif;
+			text-shadow: 1px 1px 1px #000;
+			background-repeat: no-repeat;
+			display: block;
+			float: left;
+			
+			&.active {
+				background-image: url("/resource/img/slide-active.png");
+			}
+			
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+#news-section {
+	width: 650px;
+	margin: 10px;
+	padding: 10px;
+	display: block;
+	float: left;
+}
+
+#sidebar {
+	width: 250px;
+	display: block;
+	margin: 10px;
+	float: left;
+	overflow: hidden;
+	height: 475px;
+	
+	ul {
+		margin: 10px;
+		list-style-type: none;
+		padding: 0;
+		li {
+			.gradient(#CCC, #999);
+			margin-top:5px;
+			padding: 10px 10px 20px;
+			color: #000;
+			
+			.author {
+				font-weight: bolder;
+				font-size: 13px;
+			}
+			
+			.phrase {
+				font-size: 13px;
+			}
+			
+			.datetime {
+				float: right;
+				font-size: 12px;
+				padding-top: 5px;
+				font-style: italic;
+				color: #333;
+			}
+		}
+	}
+}
+
+.destaques {
+	font-family: arial;
+	background-color: #000;
+	color: #FFF;
+	padding: 10px;
+	display: block;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.news-content {
+	z-index: 10;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	
+	a {
+		width: 32px;
+		height: 32px;
+		display: block;
+		float: left;
+		margin-left: 5px;
+	}
+}
+
+.avaaz {
+	background-image: url("/resource/ico/32/avaaz.png");
+}
+
+.g1 {
+	background-image: url("/resource/ico/32/g1.png");
+}
+
+.veja {
+	background-image: url("/resource/ico/32/veja.png");
+}
+
+.sul21 {
+	background-image: url("/resource/ico/32/sul21.png");
+}
+
+.youtube {
+	background-image: url("/resource/ico/32/youtube.png");
+}
+
+.folha {
+	background-image: url("/resource/ico/32/folha.jpg");
+}
+
+.gazeta-do-povo {
+	background-image: url("/resource/ico/32/gazeta-do-povo.png");
+}

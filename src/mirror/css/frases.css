@@ -1,0 +1,129 @@
+.gradient(@color1, @color2) {
+	background: @color1; /* Old browsers */
+	background: -moz-linear-gradient(top,  @color1 0%, @color2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, @color1 0%, @color2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, @color1 0%, @color2 100%); /* IE10+ */
+	background: linear-gradient(to bottom, @color1 0%, @color2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color1', endColorstr='@color2',GradientType=0 ); /* IE6-9 */
+}
+
+.border-radius(@params) {
+	border-radius: @params;
+	-moz-border-radius: @params;
+	-webkit-border-radius: @params;
+}
+
+#objetivo {
+	background-image: url("/resource/img/alphablack-marinho.png");
+	color: #FFF;
+	padding: 10px;
+	margin: 10px;
+	clear: both;
+	height: 40px;
+	
+	.explanation {
+		width: 700px;
+		display: block;
+		float: left;
+		height: 40px;
+	}
+	
+	form {
+		display: block;
+		float: left;
+		height: 40px;
+		button {
+			margin-top: 5px;
+			margin-left: 20px;
+		}
+	}
+}
+
+#search-form {
+	margin: 10px;
+	padding: 5px;
+	
+	.seacher input[type="search"] {
+		width: 500px;
+	}
+
+	.datepicker {
+		width: 100px !important;
+		float: right;
+		margin-left: 10px;
+	}
+}
+
+#phrases {
+	article {
+		.gradient(#BBB, #999);
+		margin: 10px 0;
+		margin-bottom: 10px;
+		padding: 10px 10px 20px;
+
+		.author {
+			font-weight: bolder;
+			font-size: 13px;
+		}
+
+		.phrase {
+			font-size: 13px;
+		}
+
+		.datetime {
+			float: right;
+			font-size: 12px;
+			padding-top: 5px;
+			font-style: italic;
+			color: #333;
+		}
+	}
+}
+
+#write-your-phrase {
+	padding: 10px;
+	margin: 120px auto;
+	width: 500px;
+	
+	textarea {
+		margin: 0 0 10px 0;
+		width: 483px;
+		height: 114px;
+		padding: 5px;
+	}
+	
+	.form-element {
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		
+		button.button {
+			margin: 0;
+			display: inline-block;
+		}
+	}
+}
+
+#abrir-menu-da-frase {
+	border: 1px solid #530000;
+}
+
+.like-total {
+	.border-radius(5px);
+	float: right;
+	color: #FFF;
+	background-color: #CCC;
+	display: block;
+	width: 28px;
+	height: 15px;
+	text-align: center;
+	font-weight: bolder;
+	margin-right: 9px;
+}
+
+.like, .unlike {
+	float: right;
+	cursor: pointer;
+}

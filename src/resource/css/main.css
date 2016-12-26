@@ -1,0 +1,316 @@
+/* CONSTANTES */
+@main-menu-bg: #31323A; /* cor de fundo do menu */
+@main-menu-text: #FFF;	/* cor da borda do menu */
+
+@floating-element-shadow: 0 0 10px #140808;	/* sombra dos elementos que estiverem flutuando em relação ao background */
+
+/* VARIAVEIS */
+@main-menu-border: @main-menu-bg - #111;
+
+@main-menu-border-hover: @main-menu-border + #111;
+@main-menu-bg-hover: @main-menu-bg + #111;
+
+@main-menu-border-active: @main-menu-border - #111;
+@main-menu-bg-active: @main-menu-bg - #111;
+
+/* FONTS */
+@font-face {
+	font-family: HandPrintingPress;
+	src: url("/resource/fonts/HandPrintingPress_Meshed_demo.eot");
+}
+@font-face {
+	font-family: HandPrintingPress;
+	src: url("/resource/fonts/HandPrintingPress_Meshed_demo.ttf");
+}
+
+/* FUNÇÕES */
+.background-size(@params) {
+	-webkit-background-size: @params;
+	-moz-background-size: @params;
+	-o-background-size: @params;
+	background-size: @params;
+}
+
+.text-shadow(@params) {
+	text-shadow: @params;
+	-moz-text-shadow: @params;
+	-webkit-text-shadow: @params;
+}
+
+.box-shadow(@params) {
+	box-shadow: @params;
+	-moz-box-shadow: @params;
+	-webkit-box-shadow: @params;
+}
+
+.border-radius(@params) {
+	-moz-border-radius: @params;
+	-webkit-border-radius: @params;
+	border-radius: @params;
+}
+
+.transition(@params) {
+	transition: @params;
+	-webkit-transition: @params;
+}
+
+.no-select {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* CLASSES DE ELEMENTOS */
+.chromeframe {
+	margin: 0;
+	background-color: #FFFFCC;
+	font-size: 13px;
+	padding: 5px;
+	position: fixed;
+	top: 0px;
+	z-index: 5;
+	width: 100%;
+	
+	a {
+		color: #000;
+		font-weight: bolder;
+	}
+}
+
+.floating {
+	.box-shadow(@floating-element-shadow);
+}
+
+.text-floating {
+	.text-shadow(@floating-element-shadow);
+}
+
+.black-marinho {
+	background-image: url("/resource/img/alphablack-marinho.png");
+	color: #FFF;
+}
+
+button.button {
+	.no-select;
+	border: 1px solid #333;
+	background-color: #070707;
+	width: 175px;
+	height: 30px;
+	color: #FFF;
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
+	.span-left, .span-right {
+		color: #333333;
+		font-weight: bolder;
+		float: left;
+	}
+
+	.span-right {
+		float: right;
+	}
+	
+	&:hover, &:focus {
+		background-color: #0C0C0C;
+		border-color: #444;
+	}
+	
+	&:active {
+		background-color: #000;
+		border-color: #222;
+	}
+	
+	&[disabled="disabled"] {
+		cursor: default;
+		border: 1px solid #333;
+		background-color: #070707;
+		color: #A4A4A4;
+		&:hover, &:focus, &:active {
+			border: 1px solid #333;
+			background-color: #070707;
+			color: #A4A4A4;
+		}
+	}
+}
+
+.form-element {
+	padding: 5px;
+	margin: 5px;
+	label {
+		width: 100px;
+		display: inline-block;
+	}
+
+	input[type="text"], input[type="datetime-local"], input[type="password"], input[type="email"],
+	input[type="search"], input[type="datetime"], input[type="date"], input[type="time"],
+	input[type="number"], select {
+		width: 210px;
+		padding: 2px;
+		&:focus {
+			outline: none;
+		}
+	}
+	
+	button {
+		margin: 15px auto 0;
+	}
+}
+
+/* ELEMENTOS */
+body {
+	background-image: url("/resource/img/bg1.jpg");
+	background-attachment: fixed;
+	.background-size(100% 100%);
+}
+
+h1 {
+	font-size: 44px;
+	margin: 5px 0;
+	font-family: "HandPrintingPress", Arial Black;
+	.no-select;
+	.text-shadow(@floating-element-shadow);
+}
+
+/* ESPECIFICAÇÕES */
+#container {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#login-form {
+	.border-radius(0 0 10px 10px);
+	width: 195px;
+	padding: 5px;
+	position: absolute;
+	top: -5px;
+	right: 30px;
+	
+	label {
+		width: 70px;
+		margin-left: 10px;
+		display: inline-block;
+	}
+	
+	input[type="text"], input[type="password"] {
+		width: 100px;
+		height: 12px;
+		padding: 0px;
+		font-size: 10px;
+		margin-top: -2px;
+		position: relative;
+		top: -2px;
+		outline: none;
+		border: 1px solid #ABADB3;
+	}
+	
+	input[type="password"] {
+		width: 60px;
+	}
+	
+	button[type="button"] {
+		background-color: #0C0C0C;
+		border: 1px solid #444;
+		color: #FFF;
+		cursor: pointer;
+		display: inline-block;
+		width: 36px;
+		font-size: 10px;
+		height: 16px;
+		position: relative;
+		top: -2px;
+		padding: 0;
+	}
+	
+	a {
+		color: #FFF;
+		font-weight: bolder;
+		text-decoration: none;
+		
+		&:hover {
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		
+		&:active {
+			color: #FF0000;
+		}
+	}
+}
+
+#main-header {
+	color: #FFF;
+}
+
+#main-menu {
+	text-align: center;
+	
+	ul {
+		display: inline-block;
+		list-style-type: none;
+		margin: 0px auto;
+		padding: 0px;
+		
+		li {
+			display: block;
+			float: left;
+			width: 100px;
+			margin: 5px;
+			cursor: pointer;
+			text-align: center;
+			background-color: @main-menu-bg;
+			border: 2px solid @main-menu-border;
+			.border-radius(3px);
+			.transition(background-color 0.5s);
+			.box-shadow(@floating-element-shadow);
+			
+			a {
+				padding: 5px 10px;
+				text-decoration: none;
+				color: @main-menu-text;
+				display: block;
+			}
+			
+			&:hover {
+				background-color: @main-menu-bg-hover;
+				border-color: @main-menu-border-hover;
+			}
+			
+			&:active, .current {
+				background-color: @main-menu-bg-active;
+				border-color: @main-menu-border-active;
+			}
+		}
+	}
+}
+
+#main-footer {
+	clear: both;
+	font-size: 14px;
+	padding: 5px;
+	text-align: center;
+}
+
+#help {
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
+}
+
+#msg-login-e-senha {	
+	width: 200px;
+	padding: 10px;
+	margin: 100px auto;
+}
+
+.block-background {
+	background-image: url("/resource/img/alphablack.png");
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	opacity: 0;
+}

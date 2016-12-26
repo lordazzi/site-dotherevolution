@@ -1,0 +1,64 @@
+<style>
+	#forms-colorpicker-table tr td {
+		width: 3px;
+		height: 6px;
+		margin: 0;
+		padding: 0;
+	}
+</style>
+<script src="jquery-1.10.0.min.js"></script>
+<script>
+	<!--
+	$(function(){
+		function componentToHex(c) {
+			var hex = c.toString(16);
+			return hex.length == 1 ? "0" + hex : hex;
+		}
+
+		function rgbToHex(r, g, b) {
+			return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+		}
+		
+		function getGray(myByte, em, total) {
+			total = total || 29;
+			if (myByte < 127) {
+				return Math.round(myByte + (127 - myByte) / total * em);
+			} else if (myByte > 127) {
+				return Math.round(myByte - (myByte - 127) / total * em);
+			} else {
+				return myByte;
+			}
+		}
+		
+		for (j = 0; j <= 30; j++) {
+			var $tr = $("<tr>");
+			var red = 255, green = 0, blue = 0;
+			for (i = 0; i < 17*6; i++) {
+				var $td = $("<td>", {
+					"alt": rgbToHex(getGray(red, j), getGray(green, j), getGray(blue, j))
+				});
+				
+				$td.css({
+					"background-color": "rgb("+getGray(red, j)+", "+getGray(green, j)+", "+getGray(blue, j)+")"
+				});
+				$td.appendTo($tr);
+				$tr.appendTo("table");
+				if (i < 17) {
+					green += 15;
+				} else if (i < (17*2)) {
+					red -= 15;
+				} else if (i < (17*3)) {
+					blue += 15;
+				} else if (i < (17*4)) {
+					green -= 15;
+				} else if (i < (17*5)) {
+					red += 15;
+				} else if (i < (17*6)) {
+					blue -= 15;
+				}
+			}
+		}
+	});	-->
+</script>
+<table id="forms-colorpicker-table" cellspacing="0">
+</table>

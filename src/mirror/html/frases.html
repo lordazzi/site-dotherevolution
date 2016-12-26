@@ -1,0 +1,71 @@
+{if="$login"}
+	<div class="floating black-marinho" id="objetivo">
+		<div class="explanation">
+			O objetivo dessa parte e escrever frases curtas de incentivo, as frases que as pessoas gostarem mais (você pode curtir as frases) aparecem na página inicial do site.
+		</div>
+		<form>
+			<button id="abrir-menu-da-frase" class="button" type="button">
+				<span class="span-left">::</span>
+				<span>Escreva a sua</span>
+				<span class="span-right">::</span>
+			</button>
+		</form>
+	</div>
+{/if}
+
+<!-- <form id="search-form" class="floating black-marinho">
+	<div class="form-element seacher">
+		<label>Pesquisar:</label><input type="search" placeholder="Pesquise pelo conteúdo da frase ou pelo autor" />
+		<!-- <input class="datepicker" type="text" />
+		<input class="datepicker" type="text" /> ->
+	</div>
+</form> -->
+
+<section id="phrases">
+	{loop="frases"}
+		<article class="floating">
+			<span class="author">{$value.txtapelido}: </span>
+			<span class="phrase">
+				{$value.txtcomentario}
+					{if="$login"}
+						<img title="Clique aqui para curtir essa frase." src="/resource/ico/16/silver-{$value.isactive}like.png" class="{$value.isactive}like" data-idcomentario="{$value.idcomentario}" />
+					{/if}
+					<span title="Total de pessoas que gostaram dessa frase: {$value.nrquantidade}" class="like-total floating">{$value.nrquantidade}</span>
+			</span><br />
+			<span class="datetime">{$value.dtcadastro}</span>
+		</article>
+	{/loop}
+</section>
+
+{if="$login"}
+	<div class="block-background" id="phrase-write-place">
+		<form class="floating black-marinho" id="write-your-phrase" method="post" action="actions/">
+			<textarea maxlength="160" id="postar-minha-frase" placeholder="Conteúdo HTML é bloqueado, escreva apenas texto."></textarea>
+			
+			<div class="form-element">
+				<button id="enviar-frase-escrita" class="button" type="button">
+					<span class="span-left">::</span>
+					<span>Enviar</span>
+					<span class="span-right">::</span>
+				</button>
+				
+				<button id="cancelar-frase" class="button" type="button">
+					<span class="span-left">::</span>
+					<span>Cancelar</span>
+					<span class="span-right">::</span>
+				</button>
+			</div>
+		</form>
+	</div>
+	
+	<div class="block-background" id="error-msg-ao-tentar-enviar-frase">
+		<span id="your-error-msg-comes-here"></span>
+		<div class="form-element">
+			<button id="ok-entendo-que-errei" class="button" type="button">
+				<span class="span-left">::</span>
+				<span>Ok</span>
+				<span class="span-right">::</span>
+			</button>
+		</div>
+	</div>
+{/if}

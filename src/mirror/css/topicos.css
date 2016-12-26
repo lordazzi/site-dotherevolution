@@ -1,0 +1,50 @@
+#topic-title {
+	padding: 5px 0 5px 20px;
+	margin-bottom: 5px;
+}
+
+ul.respostas {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	li {
+		min-height: 200px;
+		padding: 10px;
+		margin: 10px;
+		position: relative;
+		article {
+			.nome {
+				font-weight: bolder;
+			}
+			
+			.picture {
+				background-image: url("/resource/img/default.jpg");
+				width: 120px;
+				height: 180px;
+				display: block;
+				float: left;
+				margin-right: 10px;
+			}
+			
+			.data {
+				font-style: italic;
+				font-size: 13px;
+				float: left;
+				position: absolute;
+				right: 10px;
+				bottom: 10px;
+			}
+		}
+	}
+}
+
+form.reply {
+	margin: 5px 0;
+	
+	textarea {
+		margin: 10px;
+		width: 932px;
+		height: 123px;
+		resize: none;
+	}
+}

@@ -1,0 +1,1 @@
+<?php require_once($_SERVER["DOCUMENT_ROOT"]."/rev/resource/php/class/phpmailer/class.phpmailer.php"); ?>
